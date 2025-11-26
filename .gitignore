@@ -1,3 +1,14 @@
 /作文技術（日本語講習）2025 （学生配付用）.pdf
 /卒業論文　フォーマット.pdf
 /論文の書き方2025（学生配付用）.pdf
+# LaTeXビルド生成物
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+*.out
+*.synctex.gz
+texmf-cache/

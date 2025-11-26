@@ -1,0 +1,116 @@
+% %以下の部分はコメント
+
+% 日本語の文字コードは UTF-8 に設定しておかないとエラーになるかもしれない（Windowsユーザは注意）
+
+% mybibfile.bib には、参考文献の情報（データベース）を格納する
+% 論文内で引用しない文献は、texコンパイル時に除外されて実行結果には表示されないので
+% 自分が読んだ論文は、とりあえずbibファイルに格納しておくとよい
+% 格納する順番も任意で構わない。tex コンパイル時に論文に登場する順番に自動で並び替えてくれる。
+
+% 各論文のデータ形式は、 key = {value} 形式になっている
+
+% このデータベースは、もちろん自分で論文情報を調べて手入力してもよいのだが
+% そんな面倒なことをせずとも、ちゃんとした論文なら、 bibtex という形で論文の公式サイトなどから入手できるので
+% それをコピーして、このファイルに貼り付ければよい（怪しい論文、学位論文、和文はないかもしれない）
+
+% 学術論文、学会発表原稿、書籍、その他、などの分類によってコンパイル後の表示形式が変わる
+% 分類は、 @  の次の英文字が表している(article:学術論文、INPROCEEDINGS：学会発表原稿、book：書籍、misc：その他）
+
+% @ariticle{**********,   とか  @INPROCEEDINGS{***********,   などの部分が「参考文献ラベル」となる
+% 本文中で、\cite{     }  として括弧内にラベルを書くと引用できる（コンパイル時に番号に変わる）
+
+
+
+
+% 例えば、以下のarticle は保坂の発表した論文だが、この卒業論文では引用されていないため、コンパイルしても表示されない
+
+@article{HOSAKA2019287,
+title = {Bankruptcy prediction using imaged financial ratios and convolutional neural networks},
+journal = {Expert Systems with Applications},
+volume = {117},
+pages = {287-299},
+year = {2019},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2018.09.039},
+author = {Tadaaki Hosaka},
+}
+
+
+
+
+
+
+
+
+
+
+
+@INPROCEEDINGS{source_camera,
+  author={Kharrazi, M. and Sencar, H.T. and Memon, N.},
+  booktitle={2004 International Conference on Image Processing, 2004. ICIP '04.}, 
+  title={Blind source camera identification}, 
+  year={2004},
+  volume={1},
+  number={},
+  pages={709-712 Vol. 1},
+  keywords={Digital images;Digital cameras;Image processing;Digital forensics;Legal factors;Manufacturing;Layout;Blood;Law enforcement;Watermarking},
+  doi={10.1109/ICIP.2004.1418853}
+}
+
+
+
+
+
+
+
+
+@INPROCEEDINGS{CNN_source_camera,
+  author={Cai, Tiantian and Shao, Zhanjian and Tomioka, Yoichi and Liu, Yuanyuan and Li, Zhu},
+  booktitle={2019 IEEE International Conference on Systems, Man and Cybernetics (SMC)}, 
+  title={CNN-based Camera Model Identification Using Image Noise in Frequency Domain}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={3518-3524},
+  keywords={Feature extraction;Cameras;Frequency-domain analysis;Convolution;Correlation;Digital images;Object recognition},
+  doi={10.1109/SMC.2019.8914375}
+}
+
+
+
+
+
+
+@INPROCEEDINGS{deep_source_camera,
+  author={Raj, Aiswariya and Sankar, Deepa},
+  booktitle={2022 4th International Conference on Advances in Computing, Communication Control and Networking (ICAC3N)}, 
+  title={Comparison of Deep Learning Networks for Source Camera Identification}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={1090-1095},
+  keywords={Deep learning;Filtering;Social networking (online);Digital images;Forensics;Cameras;Feature extraction;Digital Image Forensics;Source Camera Identification;Deep learning networks;VGG16},
+  doi={10.1109/ICAC3N56670.2022.10074235}
+}
+
+
+
+
+
+
+% miscは「その他」
+% ネット記事みたいなものは、そもそもあまり文献として挙げる必要もないが、どうしても引用したい場合には以下のようにする
+
+
+@misc{police,
+  title = {警察におけるサイバー重点施策},
+  author = {警察庁},
+  year = {2022},
+  note = {\url{https://www.npa.go.jp/bureau/cyber/what-we-do/about.html} [アクセス日： (アクセス日を記入)]}
+}
+
+
+
+
+
+
