@@ -32,8 +32,8 @@
   \vspace{8cm}
 
   \begin{tabular}{rl}
-    {\LARGE 題　　目}　 & {\LARGE ：低コスト移動ロボットにおける} \\
-                         & {\LARGE ~~VLM を用いたターゲット追従} \\ \\ \\
+    {\LARGE 題　　目}　 & {\LARGE ：低コスト移動ロボットによる} \\
+                         & {\LARGE ~~VLM を用いた目標物体への自律移動} \\ \\ \\
     {\LARGE 指導教員}　 & {\LARGE ：保坂 忠明} \\　 \\ \\
     {\LARGE 学生番号}　 & {\LARGE ：1512221209} \\　 \\ \\
     {\LARGE 氏　　名}　 & {\LARGE ：小坂 尚璃}
@@ -124,11 +124,12 @@ You output only the next driving command as a single uppercase token from \{LEFT
 \end{quote}
 
 \textbf{タスク指示（画像と同時に付与する \texttt{DEFAULT\_INSTRUCTION})}
-\begin{quote}
+\begin{quote}\footnotesize
 \begin{verbatim}
 DEFAULT_INSTRUCTION = (
     "Look at the image. Choose ONE from LEFT, RIGHT, FORWARD, FORWARD_SLOW, STOP. "
-    "- If you see a yellow box (with or without the word TARGET): move toward it (LEFT/RIGHT to center it, FORWARD/FORWARD_SLOW to approach). When it is very close or fills most of the frame, output STOP."
+    "- If you see a yellow box (with or without the word TARGET): move toward it (LEFT/RIGHT to center it, 
+    FORWARD/FORWARD_SLOW to approach). When it is very close or fills most of the frame, output STOP."
     "- If NO yellow box is visible at all: output STOP (do not advance blindly)."
 )
 \end{verbatim}
@@ -142,7 +143,7 @@ DEFAULT_INSTRUCTION = (
   \item 応答に説明や補足文を含めず，一語のみを出力する。
 \end{itemize}
 
-以降では，この \texttt{DEFAULT\_INSTRUCTION} を毎回画像とともに与える前提で，画像から直接「次の一手」を選択する VLM ベース制御として議論する。
+以降では，この \texttt{DEFAULT\_INSTRUCTION} を毎回画像とともに与える前提で，画像から直接次の行動を選択する VLM ベース制御として議論する。
 
 \section{制御手順}
 本研究では，画像取得からコマンド送信までの一連の処理を 10\,s ごとに繰り返す構成とした。各 10\,s の更新周期ごとに最新フレームを 1 枚取得して命令を更新する。
